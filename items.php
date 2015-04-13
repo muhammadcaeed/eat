@@ -9,152 +9,58 @@
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
             <li><a href="#">Restaurants</a></li>
-            <li class="active">KFC</li>
+            <li class="active">
+                <?php
+                if(isset($_GET['id']))
+                {
+                    $id = $_GET['id'];
+                    $qry="SELECT * FROM restaurant where id ='" .  $id . "'";
+                    $data = mysql_query($qry);
+                    if(!$data)
+                    {
+                        die("Error: " . mysql_error());
+                    }
+                    else {
+                        while ($row = mysql_fetch_array($data)) {
+                            echo $row['res_name'];
+                        }
+                    }
+                }
+                ?>
+            </li>
 
         </ol>
 
-        <div class="row">
-            <div class="col-md-2">.col-md-2</div>
-            <div class="col-md-7">
-                <img src="images/kfc/cover.jpg" width="100%" height="200px">
-                <h3 style="line-height: 0;">Deal</h3>
+    <div class="row">
+        <div class="col-md-2">.col-md-2</div>
+        <div class="col-md-7">
+            <img src="images/kfc/cover.jpg" width="100%" height="200px">
 
-                <table class="table">
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
+    <?php
+    $query = "SELECT category.cat_name, category.cover, category.id, item.cat_id, item.item_name, item.price, item.description
+              FROM category, item
+              WHERE category.id =  item.cat_id";
 
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
+    $result = mysql_query($query) or die(mysql_error());
 
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
 
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
+    while($row = mysql_fetch_array($result)){ ?>
+        <h3 style=line-height: 0;><?php echo $row['cat_name']; ?></h3>
+            <table class="table">
 
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
+                <tr>
+                    <td class="col-md-3">
+                        <span><p class="btn-sm btn-info"><?php echo $row['item_name']; ?></p><?php echo $row['description']; ?> </span>
+                    </td>
+                    <td class="col-md-2 text-center">
+                        <span class="btn-sm btn-primary"><?php echo $row['price']; ?></span></td>
+                    <td class="col-md-1 text-center">
 
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
-
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-
+                        <button class="btn-xs btn-danger">Add</button>
+                    </td>
+                </tr>
                 </table>
-
-                <img src="images/kfc/cover.jpg" width="100%" height="200px">
-                <h3 style="line-height: 0;">Burgers</h3>
-
-                <table class="table">
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
-
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
-
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
-
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
-
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
-
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
-
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-
-                </table>
-
-
-                <img src="images/kfc/cover.jpg" width="100%" height="200px">
-                <h3 style="line-height: 0;">Deal</h3>
-
-                <table class="table">
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
-
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
-
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
-
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
-
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-3">
-                            <span><p class="btn-sm btn-info">Big Family Festival</p> 1 3 Value burgers, 3 zinger burgers, 6 pieces chicken & 1 - 1.5 liter drink.</span>
-                        </td>
-                        <td class="col-md-2 text-center">
-
-                            <span class="btn-sm btn-primary">Rs1695</span>
-                        </td>
-                        <td class="col-md-1 text-center">
-
-                            <button class="btn-xs btn-danger">Add</button>
-                        </td>
-                    </tr>
-
-                </table>
-
+     <?php   }    ?>
 
             </div>
             <div class="col-md-3">.col-md-3</div>

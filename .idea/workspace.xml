@@ -35,24 +35,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="restaurants.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/restaurants.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1581">
-              <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
-              <folding>
-                <marker date="1428875558007" expanded="true" signature="1034:1058" placeholder="SELECT * FRO..restaurant..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="items.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/items.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8039569" vertical-offset="102" max-vertical-offset="2856">
-              <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
-              <folding />
+            <state vertical-scroll-proportion="0.6136364" vertical-offset="407" max-vertical-offset="1190">
+              <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
+              <folding>
+                <element signature="tag#div#0" expanded="false" />
+                <element signature="tag#div#1" expanded="false" />
+                <marker date="1428966676931" expanded="true" signature="635:684" placeholder="SELECT * FRO..restaurant..." />
+                <marker date="1428966676931" expanded="true" signature="1325:1518" placeholder="SELECT categ..category..." />
+                <marker date="1428966676931" expanded="true" signature="1648:1660" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="1733:1871" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="1755:1871" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="1797:1871" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="2013:2087" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="2165:2263" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="2333:2416" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="2333:2351" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="570:2333" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="895:939" placeholder="SELECT * FRO..item...." />
+                <marker date="1428966676931" expanded="true" signature="1648:1660" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="2333:2416" placeholder="..." />
+                <marker date="1428966676931" expanded="true" signature="2333:2351" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,8 +77,8 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/header.php" />
-        <option value="$PROJECT_DIR$/restaurants.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/restaurants.php" />
         <option value="$PROJECT_DIR$/items.php" />
       </list>
     </option>
@@ -135,7 +141,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/www/cc" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
@@ -194,7 +200,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2877551" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2877551" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905295" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -227,7 +233,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -245,7 +251,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1581">
           <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
           <folding>
-            <marker date="1428875558007" expanded="true" signature="1034:1058" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428964307863" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..restaurant..." />
           </folding>
         </state>
       </provider>
@@ -254,7 +260,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2856">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="tag#div#0" expanded="false" />
+            <element signature="tag#div#1" expanded="false" />
+            <marker date="1428966676931" expanded="true" signature="635:684" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428966676931" expanded="true" signature="1325:1518" placeholder="SELECT categ..category..." />
+            <marker date="1428966676931" expanded="true" signature="1648:1660" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1733:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1755:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1797:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2013:2087" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2165:2263" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2416" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2351" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="570:2333" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="895:939" placeholder="SELECT * FRO..item...." />
+            <marker date="1428966676931" expanded="true" signature="1648:1660" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2416" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2351" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -271,7 +295,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1581">
           <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
           <folding>
-            <marker date="1428875558007" expanded="true" signature="1034:1058" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428964307863" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..restaurant..." />
           </folding>
         </state>
       </provider>
@@ -280,7 +304,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2856">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="tag#div#0" expanded="false" />
+            <element signature="tag#div#1" expanded="false" />
+            <marker date="1428966676931" expanded="true" signature="635:684" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428966676931" expanded="true" signature="1325:1518" placeholder="SELECT categ..category..." />
+            <marker date="1428966676931" expanded="true" signature="1648:1660" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1733:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1755:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1797:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2013:2087" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2165:2263" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2416" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2351" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="570:2333" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="895:939" placeholder="SELECT * FRO..item...." />
+            <marker date="1428966676931" expanded="true" signature="1648:1660" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2416" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2351" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -327,7 +369,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1428875558007" expanded="true" signature="1034:1058" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428964307863" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..restaurant..." />
           </folding>
         </state>
       </provider>
@@ -352,7 +394,7 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="714">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1428875558007" expanded="true" signature="1034:1058" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428964307863" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..restaurant..." />
           </folding>
         </state>
       </provider>
@@ -532,29 +574,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/items-old.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1428">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3536">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1428961709270" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428961709270" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..category..." />
+            <marker date="1428961709270" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..item..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/restaurants.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="1581">
-          <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.6420863" vertical-offset="408" max-vertical-offset="1581">
+          <caret line="45" column="61" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
           <folding>
-            <marker date="1428875558007" expanded="true" signature="1034:1058" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428964307863" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..restaurant..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="1394">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/items.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8039569" vertical-offset="102" max-vertical-offset="2856">
-          <caret line="65" column="51" selection-start-line="65" selection-start-column="51" selection-end-line="65" selection-end-column="51" />
-          <folding />
+        <state vertical-scroll-proportion="0.6136364" vertical-offset="407" max-vertical-offset="1190">
+          <caret line="47" column="70" selection-start-line="47" selection-start-column="70" selection-end-line="47" selection-end-column="70" />
+          <folding>
+            <element signature="tag#div#0" expanded="false" />
+            <element signature="tag#div#1" expanded="false" />
+            <marker date="1428966676931" expanded="true" signature="635:684" placeholder="SELECT * FRO..restaurant..." />
+            <marker date="1428966676931" expanded="true" signature="1325:1518" placeholder="SELECT categ..category..." />
+            <marker date="1428966676931" expanded="true" signature="1648:1660" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1733:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1755:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="1797:1871" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2013:2087" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2165:2263" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2416" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2351" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="570:2333" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="895:939" placeholder="SELECT * FRO..item...." />
+            <marker date="1428966676931" expanded="true" signature="1648:1660" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2416" placeholder="..." />
+            <marker date="1428966676931" expanded="true" signature="2333:2351" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

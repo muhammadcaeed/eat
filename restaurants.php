@@ -43,7 +43,7 @@
                     <div>
                         <div id="res" class="pull-left">
                             <ul>
-                                <li><h3><?php echo $row['name']; ?></h3></li>
+                                <li><h3><?php echo $row['res_name']; ?></h3></li>
                                 <li><i><u>Meal</u></i><br><span class="glyphicon glyphicon-cutlery"></span><strong> <?php echo $row['type']; ?></strong></li>
                                 <li><i><u>Address</u></i><br><span class="glyphicon glyphicon-home"></span><strong> <?php echo $row['address']; ?></strong></li>
                             </ul>
@@ -67,7 +67,7 @@
                                 </li>
                                 <li>
                                     <div class="btn-group-sm">
-                                        <span class="btn btn-success">ORDER NOW</span>
+                                        <a href="items.php?id=<?php echo $row['id']; ?>"><span class="btn btn-success">ORDER NOW</span></a>
                                     </div>
                                 </li>
                             </ul>
