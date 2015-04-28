@@ -1,21 +1,57 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; include 'config.php'; ?>
+<?php if(isset($_GET['msg'])) {
+    ?>
+    <div class="alert alert-info alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Congratulations!</strong> Your order has been placed successfully!
+    </div>
+<?php } ?>
 <div id="search">
     <div id="custom-bootstrap-menu" class="navbar navbar-default " role="navigation">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
+            <div class="row" style="height: 60px;">
+                <div id="searchText" class="col-md-4" style="margin-left: 50px;">
+                    <button type="button" class="btn btn-block btn-lg btn-danger" disabled>Search Your Restaurant</button>
+                </div>
+                <div class="col-md-7">
+                    <div>
+                        <form class="form-inline" method="GET" action="index.php" role="search">
+                            <div class="form-group">
+                                <input type="text" name="res_name" style="width: 506px;" class="form-control res_name" placeholder="Search">
+                            </div>
+                            <button type="submit" name="submit" value="submit" class="btn btn-primary move-left"><span class="glyphicon glyphicon-search"></span></button>
+                        </form>
+
+                        <script>
+                            $(document).ready(function() {
+
+                                $('input.res_name').typeahead({
+                                    name: 'res_name',
+                                    remote : 'res_name.php?query=%QUERY'
+                                });
+                            })
+                        </script>
+
+                        <?php
+                        if(isset($_GET['submit']))
+                        {
+                            $res_name = $_GET['res_name'];
+                            $qry = "SELECT id from restaurant WHERE res_name = '". $res_name . "'";
+                            $result = mysql_query($qry) or die(mysql_error());
+                            $row = mysql_fetch_array($result);
+                            $row_id = $row['id'];
+                            header("location:items.php?id=$row_id");
+                        }
+                        ?>
+
                     </div><!-- /input-group -->
                 </div><!-- /.col-lg-6 -->
-            </div><!-- /.row -->
 
+            </div><!-- /.row -->
+            <div class="row col-md-7 col-md-offset-2">
+                <a href="restaurants.php"><span style="text-decoration: none;" disabled class="btn btn-block btn-lg btn-primary">View All Restaurants</span></a>
             </div>
-            <div class="collapse navbar-collapse navbar-menubuilder">
-                <ul class="nav navbar-nav navbar-left"></ul>
+
             </div>
         </div>
     </div>
@@ -59,22 +95,42 @@
                 <h1>Orders</h1>
             </div>
             <div class="list-group">
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Order 1</h4>
-                    <p class="list-group-item-text">Order 1 Details</p>
-                </a>
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Order 2</h4>
-                    <p class="list-group-item-text">Order 2 Details</p>
-                </a>
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Order 3</h4>
-                    <p class="list-group-item-text">Order 3 Details</p>
-                </a>
-                <a href="#" class="list-group-item">
-                    <h4 class="list-group-item-heading">Order 4</h4>
-                    <p class="list-group-item-text">Order 4 Details</p>
-                </a>
+
+                <?php
+
+                $rresult = mysql_query("SELECT * FROM orders");
+                $num_rows = mysql_num_rows($rresult);
+                ?>
+
+                <?php
+                $oqry = "SELECT *
+                   FROM orders
+                   ORDER BY id DESC
+                   LIMIT 4";
+                $orslt = mysql_query($oqry) or die(mysql_error());
+                while($orow = mysql_fetch_array($orslt)) {
+                    $oname = $orow['name'];
+                    $otime = $orow['time'];
+                    $odate = $orow['date'];
+                    $res_name = $orow['res_name'];
+
+                    if($oname != 'temp') {
+                        ?>
+
+                        <a href="#" class="list-group-item">
+                            An order to <?php echo $res_name; ?> restaurant was placed by <?php echo $oname; ?>
+                            at <?php echo $otime; ?>
+                            <h4 class="list-group-item-heading"><span
+                                    class="glyphicon glyphicon-user"></span> <?php echo $oname; ?></h4>
+
+                            <p class="list-group-item-text"><span class="text-left"><span
+                                        class="glyphicon glyphicon-dashboard"></span> <?php echo $otime; ?></span><span
+                                    class="pull-right"><span
+                                        class="glyphicon glyphicon-calendar"></span> <?php echo $otime; ?></span></p>
+                        </a>
+                    <?php
+                    } }
+                ?>
             </div>
         </div>
     </div>
@@ -82,8 +138,8 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <h4>Top Food Delivery and Restaurant Reservation in Karachi</h4>
-                <p>Hungry? Dial 111-HUNGRY (486479). EatOye.PK is the top online food delivery and restaurant reservation service in Pakistan with over 200,000 visitors every month.</p>
-                <p>EatOye assists thousands of its customers – avid diners and food aficionados – find restaurants, get-to-know the hot eateries, order food and reserve tables for FREE and pay better prices at top restaurants in all leading cities across Pakistan. EatOye was established by few hungry entrepreneurs in 2011 and since then it has never looked back. EatOye, aims at making timely food deliveries, helps you in finding restaurants in your area, and makes online restaurant reservations (Karachi, Lahore, Islamabad and Rawalpindi), quick and easy.</p>
+                <p>Video provides a powerful way to help you prove your point. When you click Online Video, you can paste in the embed code for the video you want to add. You can also type a keyword to search online for the video that best fits your document.</p>
+                <p>To make your document look professionally produced, Word provides header, footer, cover page, and text box designs that complement each other. For example, you can add a matching cover page, header, and sidebar. Click Insert and then choose the elements you want from the different galleries.</p>
                  <p>The process is simple:
                     <ul>
                         <li>Select your area.</li>

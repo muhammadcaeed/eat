@@ -1,26 +1,21 @@
 <?php include 'header.php'; include 'config.php'; ?>
 <div class="container-fluid">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb" style="margin-top:20px;">
         <li><a href="#">Home</a></li>
         <li class="active">Restaurants</li>
 
     </ol>
     <div class="row">
         <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <div class="list-group">
-                        <a href="#" class="list-group-item disabled">
-                            Cuisines
-                        </a>
-                        <a href="#" class="list-group-item">Cuisines 1</a>
-                        <a href="#" class="list-group-item">Cuisines 2</a>
-                        <a href="#" class="list-group-item">Cuisines 3</a>
-                        <a href="#" class="list-group-item">Cuisines 4</a>
-                        <a href="#" class="list-group-item">Cuisines 5</a>
-                    </div>
-
-                </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item disabled">
+                    Cuisines
+                </a>
+                <a href="#" class="list-group-item">Cuisines 1</a>
+                <a href="#" class="list-group-item">Cuisines 2</a>
+                <a href="#" class="list-group-item">Cuisines 3</a>
+                <a href="#" class="list-group-item">Cuisines 4</a>
+                <a href="#" class="list-group-item">Cuisines 5</a>
             </div>
         </div>
         <div class="col-md-9">

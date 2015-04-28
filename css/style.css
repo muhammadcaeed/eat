@@ -1,11 +1,42 @@
+.middle
+{
+    position: absolute;
+    top: 50%;
+    margin-top: -200px;/* half of #content height*/
+    left: 0;
+    width: 100%;
+}
+#navbar
+{
+    min-height: 75px;
+}
+#navbarWorkspace
+{
+    min-height: 68px;
+}
+#navbarBorder {
+    min-height: 7px;
+    background: -webkit-linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg, #4b6cb7 10%, #182848 90%); /* W3C */
+}
+
+
+
 #search
 {
-    margin-top: -20px;
     background: url(../images/1.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     min-height: 425px;
     padding-top: 80px;
+}
+
+#searchText
+{
+    margin-top: -7px;
 }
 
 #custom-bootstrap-menu.navbar-default .navbar-brand {
@@ -14,10 +45,10 @@
 }
 #custom-bootstrap-menu.navbar-default {
     font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(24, 40, 72, 0.7);
     border-width: 0px;
     border-radius: 0px;
-    height: 100px;
+    height: 200px;
     padding-top: 35px;
 }
 #custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
@@ -50,6 +81,11 @@
     background-color: #ffffff;
 }
 
+#res_height
+{
+    min-height: 400px;
+}
+
 #res
 {
     margin-top:-20px;
@@ -74,4 +110,35 @@
 #cover-lapse-dp
 {
     margin-top:-70px;
+}
+
+
+.tt-hint,.res_name  {
+    border: 1px solid transparent;
+    border-radius: 4px 0px 0px 4px;
+    font-family: "Calibri";
+    font-size: 20px;
+    height: 34px;
+    line-height: 34px;
+    padding: 0px 12px;
+    width: 506px;
+}
+
+.tt-dropdown-menu {
+    width: 506px;
+    margin-top: 5px;
+    padding: 8px 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4px 4px 4px 4px;
+    font-family: "Calibri";
+    font-size: 18px;
+    color: #111;
+    background-color: #F1F1F1;
+}
+
+.move-left
+{
+    margin-left:-6px;
 }
