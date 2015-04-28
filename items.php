@@ -22,9 +22,9 @@ else {
 
 if(isset($_GET['submit']))
 {
-    $order_name = $_GET['fname'];
-    $address = $_GET['address'];
-    $phone = $_GET['phone'];
+    $order_name = $_GET['user'];
+    $address = $_GET['add'];
+    $phone = $_GET['numb'];
     date_default_timezone_set("Asia/Karachi");
     $dt1=date("Y-m-d");
     $dt2=date("H:i:s");
@@ -95,7 +95,13 @@ if(isset($_GET['itemid']))
             </li>
 
         </ol>
-
+        <?php if(isset($_GET['low'])) {
+            ?>
+            <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>You must place an order of Rs 300 or more.</strong> Currently your ordered amount was Rs <?php echo $_GET['low']; ?>
+            </div>
+        <?php } ?>
 
     <div class="row">
         <div class="col-md-8">
@@ -176,6 +182,7 @@ if(isset($_GET['itemid']))
                 <a name="order" class="list-group-item list-group-item-info">
                     Order Placement
                 </a>
+                <!--
                    <span class="list-group-item">
                        <div class="input-group">
                            <span class="input-group-btn">
@@ -187,6 +194,7 @@ if(isset($_GET['itemid']))
                            </span>
                        </div>
                    </span>
+                   -->
                     <span class="list-group-item">
                         <table>
                             <tr>
@@ -232,7 +240,7 @@ if(isset($_GET['itemid']))
                                     echo "<td>" . $oqty . "</td>";
                                     echo "<td>" . $zrow['item_name'] . "</td>";
                                     echo "<td>" . $final_price . "</td>"; ?>
-                                    <td><a href="items.php?id=<?php echo $res_id; ?>&del=<?php echo $order_item_id; ?>" class="glyphicon glyphicon-remove"></a></td>
+                                    <td><a href="items.php?id=<?php echo $res_id; ?>&cc=<?php echo $order_item_id; ?>" class="glyphicon glyphicon-remove"></a></td>
                                    <?php echo "</tr>";
                                     $total += $final_price;
                             }
@@ -250,11 +258,11 @@ if(isset($_GET['itemid']))
 
                    </span>
                    <span class="list-group-item text-right">
-                       <span>Total : Rs.<?php echo $total; ?></span>
+                       <span>Total : Rs.<?php if($total>0){ echo $total;} else {echo "300";}; ?></span>
                    </span>
                 <span class="list-group-item list-group-item-danger text-center">
-                    <a href="items.php?id=<?php echo $res_id; ?>&del=fullempty">Empty Cart</a>
-                    <a href="#" data-toggle="modal" data-target="#myModal">Order Now</a>
+                    <a href="items.php?id=<?php echo $res_id; ?>&cc=fullempty">Empty Cart</a>
+                    <a<?php if($total>=300){ ?>  href="#" data-toggle="modal" data-target="#myModal" <?php } else { ?> href="items.php?low=<?php echo $total; ?>&id=<?php echo $res_id; ?>" <?php } ?> >Order Now</a>
                 </span>
 
                 <!-- Modal -->
@@ -265,7 +273,7 @@ if(isset($_GET['itemid']))
                                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                                 <h4 class="modal-title" id="myModalLabel">Order Placement</h4>
                             </div>
-                            <div class="modal-body" style="min-height: 300px;">
+                            <div class="modal-body" style="min-height: 250px;">
                                 <!--
                                 <div class="form-group">
                                     <label for="inputName3" class="col-sm-2 control-label">Name</label>
@@ -295,7 +303,7 @@ if(isset($_GET['itemid']))
                                                 <label for="user" class="col-lg-2 control-label">Name</label>
 
                                                 <div class="col-lg-10">
-                                                    <input id="user" name="user" type="text"  class="form-control" name="user" placeholder="Full Name" required autofocus>
+                                                    <input id="user" type="text"  class="form-control" name="user" placeholder="Full Name" required autofocus>
                                                 </div>
                                             </div>
 
@@ -303,7 +311,7 @@ if(isset($_GET['itemid']))
                                                 <label for="add" class="col-lg-2 control-label">Address</label>
 
                                                 <div class="col-lg-10">
-                                                    <input id="add" name="add" type="text" name="add" class="form-control" placeholder="Complete Address" required>
+                                                    <input id="add" type="text" name="add" class="form-control" placeholder="Complete Address" required>
                                                 </div>
                                             </div>
 
@@ -311,25 +319,24 @@ if(isset($_GET['itemid']))
                                                 <label for="numb" class="col-lg-2 control-label">Mobile Number</label>
 
                                                 <div class="col-lg-10">
-                                                    <input id="numb" name="numb" type="tel" pattern="[9][2][3]{12}" name="numb" class="form-control" placeholder="923XXXXXXXXX" maxlength="12" required>
+                                                    <input id="numb" type="tel" name="numb" class="form-control" placeholder="923XXXXXXXXX" maxlength="12" required>
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <div class="col-lg-10 col-lg-offset-2">
-                                                    <button class="btn btn-primary btn-block" type="submit" name="btnSubmit">Submit</button>
-                                                </div>
-                                            </div>
-                                        </fieldset>
-                                    </form>
+
                                 </div>
 
 
                             </div>
                             <div class="modal-footer">
 
-                                <button class="btn btn-primary btn-block" type="submit" name="Submit">Submit</button>
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <button class="btn btn-primary btn-block" type="submit" name="btnSubmit">Submit</button>
+                                    </div>
+                                </div>
+                                </fieldset>
+                                </form>
                             </div>
                         </div>
 
@@ -349,9 +356,10 @@ if(isset($_GET['itemid']))
 </div>
 
 <?php
-if(isset($_GET['del'])) {
-    $del = $_GET['del'];
-    if($del == "fullempty") {
+
+if(isset($_GET['cc'])) {
+    $del = $_GET['cc'];
+    if($del == "fullempty" || $del == "refresh") {
         $delete = "DELETE FROM order_item WHERE order_id = '" . $order_idd . "'";
         mysql_query($delete) or die(mysql_error());
         header("location:items.php?id=$res_id");

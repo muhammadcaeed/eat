@@ -62,7 +62,7 @@
                                 </li>
                                 <li>
                                     <div class="btn-group-sm">
-                                        <a href="items.php?id=<?php echo $row['id']; ?>"><span class="btn btn-success">ORDER NOW</span></a>
+                                        <a href="items.php?id=<?php echo $row['id']; ?>&cc=refresh"><span class="btn btn-success">ORDER NOW</span></a>
                                     </div>
                                 </li>
                             </ul>
