@@ -266,7 +266,7 @@ if(isset($_GET['itemid']))
                                 <h4 class="modal-title" id="myModalLabel">Order Placement</h4>
                             </div>
                             <div class="modal-body" style="min-height: 300px;">
-
+                                <!--
                                 <div class="form-group">
                                     <label for="inputName3" class="col-sm-2 control-label">Name</label>
                                     <div class="col-sm-10">
@@ -285,12 +285,50 @@ if(isset($_GET['itemid']))
                                         <input type="text" class="form-control" id="inputPhone3" name="phone" placeholder="+923xxxxxxxxx">
                                     </div>
                                 </div>
-                                <input type="hidden" name="id" value="<?php echo $res_id ?>">;
-                            </div>
+                                <input type="hidden" name="id" value="<?php //echo $res_id ?>">;
+                                -->
 
+                                <div class="col-md-6 col-md-offset-3">
+                                    <form class="form-horizontal" role="form" method="post" action="verify.php">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <label for="user" class="col-lg-2 control-label">Name</label>
+
+                                                <div class="col-lg-10">
+                                                    <input id="user" name="user" type="text"  class="form-control" name="user" placeholder="Full Name" required autofocus>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="add" class="col-lg-2 control-label">Address</label>
+
+                                                <div class="col-lg-10">
+                                                    <input id="add" name="add" type="text" name="add" class="form-control" placeholder="Complete Address" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="numb" class="col-lg-2 control-label">Mobile Number</label>
+
+                                                <div class="col-lg-10">
+                                                    <input id="numb" name="numb" type="tel" pattern="[9][2][3]{12}" name="numb" class="form-control" placeholder="923XXXXXXXXX" maxlength="12" required>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-lg-10 col-lg-offset-2">
+                                                    <button class="btn btn-primary btn-block" type="submit" name="btnSubmit">Submit</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+
+
+                            </div>
                             <div class="modal-footer">
 
-                                <button type="submit" value="submit" name="submit" class="btn btn-primary">Order</button>
+                                <button class="btn btn-primary btn-block" type="submit" name="Submit">Submit</button>
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
