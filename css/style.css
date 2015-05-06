@@ -142,3 +142,28 @@
 {
     margin-left:-6px;
 }
+
+@font-face {
+    font-family: bon;
+    src: url(../fonts/ARBONNIE.ttf);
+}
+
+
+
+.headerDivider {
+    border-left:1px solid #38546d;
+    border-right:1px solid #16222c;
+    height:200px;
+    position:absolute;
+    right:300px;
+    top:50px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#cat_custom a {
+    color:black;
+}
+

@@ -2,6 +2,7 @@
 
 
 <?php
+global $res_name, $res_id;
 if(isset($_GET['id'])) {
     $res_id = $_GET['id'];
     $vqry = "SELECT * from restaurant WHERE id = '" . $res_id . "'";
@@ -15,13 +16,15 @@ if(isset($_GET['id'])) {
         $type = $vrow['type'];
     }
 }
-
-else {
+/*
+if(!isset($_GET['id'])) {
     header('location:/eat/');
 }
-
+*/
 if(isset($_GET['submit']))
 {
+    echo $res_name;
+    /*
     $order_name = $_GET['user'];
     $address = $_GET['add'];
     $phone = $_GET['numb'];
@@ -31,7 +34,47 @@ if(isset($_GET['submit']))
     $atquery = "UPDATE orders SET name = '$order_name', address = '$address', phone = '$phone', res_name = '$res_name', date = '$dt1', time = '$dt2' WHERE name = 'temp' ";
     mysql_query($atquery) or die(mysql_error());
     mysql_query("INSERT INTO orders (name) VALUE ('temp')");
-    header("location:index.php?msg=success");
+
+    $phn = '+' . $phone;
+    echo $phn;
+
+    $desci = 'An order to ' . $res_name . ' was placed by ' . $order_name . ' at ' . $dt2;
+
+
+    $username = 'd99vs0ys';
+    $password = 'gXfECvka';
+    $destination = $phn;
+    $source = 'EWYN';
+    $text = $desci;
+
+    $content =  'action=sendsms'.
+        '&user='.rawurlencode($username).
+        '&password='.rawurlencode($password).
+        '&to='.rawurlencode($destination).
+        '&from='.rawurlencode($source).
+        '&text='.rawurlencode($text);
+
+    $smsglobal_response = file_get_contents('http://www.smsglobal.com.au/http-api.php?'.$content);
+
+    //Sample Response
+    //OK: 0; Sent queued message ID: 04b4a8d4a5a02176 SMSGlobalMsgID:6613115713715266
+
+    $explode_response = explode('SMSGlobalMsgID:', $smsglobal_response);
+
+    if(count($explode_response) == 2) { //Message Success
+        header("location:index.php?msg=success");
+        $smsglobal_message_id = $explode_response[1];
+
+        //SMSGlobal Message ID
+       // echo $smsglobal_message_id;
+    } else { //Message Failed
+        echo 'Message Failed'.'<br />';
+
+        //SMSGlobal Response
+        echo $smsglobal_response;
+    }
+
+*/
 }
 
 if(isset($_GET['itemid']))
@@ -104,7 +147,7 @@ if(isset($_GET['itemid']))
         <?php } ?>
 
     <div class="row">
-        <div class="col-md-8">
+        <div id="cat_custom" class="col-md-8">
     <?php
         $query = "SELECT * FROM category WHERE res_id = '" . $res_id . "'";
         $result = mysql_query($query) or die(mysql_error());
@@ -151,7 +194,7 @@ if(isset($_GET['itemid']))
             </div>
         <div class="col-md-4">
             <div class="list-group">
-                <a class="list-group-item list-group-item-info">
+                <a name="meals" class="list-group-item list-group-item-info" style="background-color: cornflowerblue; color:white; font-size: large;">
                     Meals
                 </a>
                 <?php
@@ -179,7 +222,7 @@ if(isset($_GET['itemid']))
 
 
             <div class="list-group">
-                <a name="order" class="list-group-item list-group-item-info">
+                <a name="order" class="list-group-item list-group-item-info" style="background-color: cornflowerblue; color:white; font-size: large;">
                     Order Placement
                 </a>
                 <!--
@@ -197,12 +240,12 @@ if(isset($_GET['itemid']))
                    -->
                     <span class="list-group-item">
                         <table>
-                            <tr>
-                                <td style="padding-left: 13px; padding-right: 13px;"><span class="glyphicon glyphicon-time"></span> 45mins</td>
-                                <td style="padding-left: 13px; padding-right: 13px;"><span class="glyphicon glyphicon-home"></span> Rs.30</td>
-                                <td style="padding-left: 13px;"><span class="glyphicon glyphicon-shopping-cart"></span> Rs.300</td>
+                            <tr style="color:cornflowerblue;">
+                                <td style="padding-left: 35px; padding-right: 35px;"><span class="glyphicon glyphicon-time"></span> 45mins</td>
+                                <td style="padding-left: 35px; padding-right: 35px;"><span class="glyphicon glyphicon-home"></span> Rs.30</td>
+                                <td style="padding-left: 35px;"><span class="glyphicon glyphicon-shopping-cart"></span> Rs.300</td>
                             </tr>
-                        </table>
+                     </table>
                    </span>
                    <span class="list-group-item text-center" style="min-height: 100px;">
 
@@ -214,7 +257,7 @@ if(isset($_GET['itemid']))
                             $iqry = "SELECT * FROM order_item WHERE order_id ='" . $order_idd . "'";
                             $irslt = mysql_query($iqry) or die(mysql_error());
                        echo "<form name='order_now' class='form-horizontal' role='form' action='#'>";
-                       echo "<table class=table>";
+                      echo "<table class=table>";
                        echo "<tr>";
                        echo "<th></th>";
                        echo "<th>Qty</th>";
@@ -242,20 +285,11 @@ if(isset($_GET['itemid']))
                                     echo "<td>" . $final_price . "</td>"; ?>
                                     <td><a href="items.php?id=<?php echo $res_id; ?>&cc=<?php echo $order_item_id; ?>" class="glyphicon glyphicon-remove"></a></td>
                                    <?php echo "</tr>";
-                                    $total += $final_price;
+
+                                $total += $final_price;
                             }
-                       echo "</table>";
-
-                        //}
-
-                       //else
-                       //{
-                       ?>
-                        <!-- <h4>Start Placing Your Order!</h4> -->
-                      <?php
-                      // }
-                       ?>
-
+                       echo "</table>";    ?>
+                       <input type="hidden" name="id" value="<?php $res_name; ?>"
                    </span>
                    <span class="list-group-item text-right">
                        <span>Total : Rs.<?php if($total>0){ echo $total;} else {echo "300";}; ?></span>
@@ -319,7 +353,7 @@ if(isset($_GET['itemid']))
                                                 <label for="numb" class="col-lg-2 control-label">Mobile Number</label>
 
                                                 <div class="col-lg-10">
-                                                    <input id="numb" type="tel" name="numb" class="form-control" placeholder="923XXXXXXXXX" maxlength="12" required>
+                                                    <input id="numb" type="tel" name="numb" pattern="[9]{1}[2]{1}[3]{1}[0-9]{9}" class="form-control" placeholder="923XXXXXXXXX" required>
                                                 </div>
                                             </div>
 
@@ -332,7 +366,7 @@ if(isset($_GET['itemid']))
 
                                 <div class="form-group">
                                     <div class="col-lg-10 col-lg-offset-2">
-                                        <button class="btn btn-primary btn-block" type="submit" name="btnSubmit">Submit</button>
+                                        <button class="btn btn-primary btn-block" type="submit" name="submit">Submit</button>
                                     </div>
                                 </div>
                                 </fieldset>
@@ -362,12 +396,12 @@ if(isset($_GET['cc'])) {
     if($del == "fullempty" || $del == "refresh") {
         $delete = "DELETE FROM order_item WHERE order_id = '" . $order_idd . "'";
         mysql_query($delete) or die(mysql_error());
-        header("location:items.php?id=$res_id");
+        header("location:items.php?id=$res_id#order");
     }
     else {
         $delete = "DELETE FROM order_item WHERE id = '" . $del . "'";
         mysql_query($delete) or die(mysql_error());
-        header("location:items.php?id=$res_id");
+        header("location:items.php?id=$res_id#order");
     }
 }
 
@@ -381,7 +415,7 @@ if(isset($_GET['minus'])) {
         $qty -= 1;
         $sinsert = "UPDATE order_item SET qty = '$qty' WHERE id ='" . $minus . "'";
         mysql_query($sinsert) or die(mysql_error());
-        header("location:items.php?id=$res_id");
+        header("location:items.php?id=$res_id#order");
         }
 }
 
@@ -394,7 +428,7 @@ if(isset($_GET['plus'])) {
         $qty += 1;
         $sinsert = "UPDATE order_item SET qty = '$qty' WHERE id ='" . $plus . "'";
         mysql_query($sinsert) or die(mysql_error());
-        header("location:items.php?id=$res_id");
+        header("location:items.php?id=$res_id#order");
 
 }
 include 'footer.php' ?>
